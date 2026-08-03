@@ -4,7 +4,7 @@ This repository is dedicated to studying the original paper, reproducing its met
 
 ## Augmented BUG Experiment 
 
-(augmented_bug_solution.py)
+(Archer/augmented_bug_solution.py)
 
 The current code provides a small reproduction experiment using the augmented BUG method to solve
 
@@ -18,4 +18,4 @@ The current code provides a small reproduction experiment using the augmented BU
 
 The following figure shows the result produced by the code:
 
-![Augmented BUG result](augmented_bug_solution.png)
+![Augmented BUG result](Archer/augmented_bug_solution.png)
