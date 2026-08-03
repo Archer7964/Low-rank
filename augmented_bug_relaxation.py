@@ -1,7 +1,7 @@
 """Simlpified Augmented BUG
 
 Equation:
-    f_t = -f + a(x)b(v)
+        
 """
 
 import numpy as np
