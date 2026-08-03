@@ -5,7 +5,7 @@ This repository is dedicated to studying the original paper, reproducing its met
 ## Augmented BUG Experiment 
 
 (Archer/augmented_bug_solution.py)
-
+1
 The current code provides a small reproduction experiment using the augmented BUG method to solve
 
 \[
