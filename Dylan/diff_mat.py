@@ -1,3 +1,4 @@
+# Externel Packages #
 import numpy as np
 
 # Finite difference matrices #
@@ -25,7 +26,7 @@ def central_Dif(size, dy, periodic=False):
     :param size: width of square matrix
     :param dy: step between grid points
     :param periodic: toggle for periodic boundary conditions
-    :return: Square central difference matrix D
+    :return: Square central difference matrix D.
     """
     dy_inv = 1 / (2*dy)
     D = np.zeros((size,size))

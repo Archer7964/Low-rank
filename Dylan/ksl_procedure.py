@@ -1,66 +1,82 @@
-# KSL Procedure #
-import numpy as np
+# Externel Packages #
 import matplotlib.pyplot as plt
-
-# Parameters #
-Rank = 5
-nx, nv = (25, 25)
-x = np.linspace(0, 1, nx)
-v = np.linspace(0, 1, nv)
-dx = (x[-1]-x[0])/(nx-1)
-dv = (v[-1]-v[0])/(nv-1)
-xm, vm = np.meshgrid(x, v, indexing='ij')
-f_0 = (1 + 0.01*np.cos(5*xm))*np.cos(2*np.pi*vm - 1)
-T_span = [0, 20]
-dT = 0.005
-nt = int((T_span[1] - T_span[0])/dT)
 
 # Finite difference matrices #
 from diff_mat import *
-D_x = central_Dif(nx, dx, True)
-D_v = central_Dif(nv, dv, True)
 
 # ODEs, Electric Field, and Local RK4 Method #
 from equations import *
 
-# Truncate initial condition down to the given rank #
-U0, S0, Vh0 = np.linalg.svd(f_0, full_matrices=False)
-S0 = np.diag(S0)
-U0_low = U0[:, :Rank]
-S0_low = S0[:Rank, :Rank]
-Vh0_low = Vh0[:Rank, :]
+# Rank Selection (Archer) #
+from helpers import *
 
 # Main loop for the KSL Procedure #
-U, S, Vh = U0_low, S0_low, Vh0_low
-U_curr, S_curr, Vh_curr = U, S, Vh
-for T in range(nt):
-    # K-Step
-    def DtK(Kk):
-        E = Electric_Field(Kk @ Vh_curr, x, v)
-        return K_del_t(Kk, Vh_curr, v, E, dx, dv, D_x, D_v)
-    K_next = rk4(DtK, U_curr @ S_curr, dT)
-    U_next, S_star = np.linalg.qr(K_next)
+def main():
+    # Parameters #
+    MAX_RANK = 5
+    RANK_TOL = 1e-10
+    nx, nv = (50, 50)
+    x = np.linspace(0, 1, nx)
+    v = np.linspace(0, 1, nv)
+    dx = (x[-1] - x[0]) / (nx - 1)
+    dv = (v[-1] - v[0]) / (nv - 1)
+    xm, vm = np.meshgrid(x, v, indexing='ij')
+    f_0 = (1 + 0.1 * np.cos(5 * xm)) * np.cos(2 * np.pi * vm - 1)
+    T_span = [0, 40]
+    dT = 0.005
+    nt = int((T_span[1] - T_span[0]) / dT)
 
-    # S-Step
-    def DtS(Sk):
-        E = Electric_Field(U_next @ Sk @ Vh_curr, x, v)
-        return -S_del_t(U_next, Sk, Vh_curr, v, E, dx, dv, D_x, D_v)
-    S_star_star = rk4(DtS, S_star, -dT)
+    D_x = central_Dif(nx, dx, True)
+    D_v = central_Dif(nv, dv, True)
 
-    # L-Step
-    def DtL(Lk):
-        E = Electric_Field(U_next @ Lk, x, v)
-        return L_del_t(U_next, Lk, v, E, dx, dv, D_x, D_v)
-    L_next = rk4(DtL, S_star_star @ Vh_curr, dT)
-    Vh_next, S_next = np.linalg.qr(L_next.T)
+    # Truncate initial condition down to the given rank #
+    U0, singular_values, Vh0 = np.linalg.svd(f_0, full_matrices=False)
+    rank = select_rank(singular_values, MAX_RANK, RANK_TOL)
+    U0_low = U0[:, :rank]
+    S0_low = np.diag(singular_values[:rank])
+    Vh0_low = Vh0[:rank, :]
 
-    # Update current decomposition
-    U_curr, S_curr, Vh_curr = U_next, S_next.T, Vh_next.T
+    U, S, Vh = U0_low, S0_low, Vh0_low
+    U_curr, S_curr, Vh_curr = U, S, Vh
+    for T in range(nt):
+        # K-Step
+        def DtK(Kk):
+            E = Electric_Field(Kk @ Vh_curr, x, v)
+            return K_del_t(Kk, Vh_curr, v, E, dx, dv, D_x, D_v)
+        K_next = rk4(DtK, U_curr @ S_curr, dT)
+        U_next, S_star = np.linalg.qr(K_next)
 
-# Construct the final state of the system #
-F = U_curr @ S_curr @ Vh_curr
-plt.figure()
-plt.scatter(xm, vm)
-cp = plt.pcolormesh(xm, vm, F, cmap='viridis')
-plt.colorbar(cp)
-plt.show()
+        # S-Step
+        def DtS(Sk):
+            E = Electric_Field(U_next @ Sk @ Vh_curr, x, v)
+            return -S_del_t(U_next, Sk, Vh_curr, v, E, dx, dv, D_x, D_v)
+        S_star_star = rk4(DtS, S_star, -dT)
+
+        # L-Step
+        def DtL(Lk):
+            E = Electric_Field(U_next @ Lk, x, v)
+            return L_del_t(U_next, Lk, v, E, dx, dv, D_x, D_v)
+        L_next = rk4(DtL, S_star_star @ Vh_curr, dT)
+        Vh_next, S_next = np.linalg.qr(L_next.T)
+
+        # Update current decomposition
+        U, singular_values, Vh = np.linalg.svd(U_next@S_next.T@Vh_next.T, full_matrices=False)
+        rank = select_rank(singular_values, MAX_RANK, RANK_TOL)
+        U_curr, S_curr, Vh_curr = U[:, :rank], np.diag(singular_values[:rank]), Vh[:rank, :]
+
+    # Construct the final state of the system #
+    F = U_curr @ S_curr @ Vh_curr
+
+    # Compare initial condition to the final state
+    plt.subplot(1,2,1)
+    plt.scatter(xm, vm)
+    cp = plt.pcolormesh(xm, vm, f_0, cmap='viridis')
+    plt.colorbar(cp)
+    plt.subplot(1,2,2)
+    plt.scatter(xm, vm)
+    cp = plt.pcolormesh(xm, vm, F, cmap='viridis')
+    plt.colorbar(cp)
+    plt.show()
+
+if __name__ == '__main__':
+    main()
