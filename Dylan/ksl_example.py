@@ -1,5 +1,6 @@
 # Externel Packages #
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Rank Selection (Archer) #
 from helpers import *
@@ -69,28 +70,36 @@ def main():
     # Exact solution for t=1
     F_exact = f_0*np.exp(-1) + (1 - np.exp(-1))*(a[:, None]@b[None,:])
 
+    # error analysis
+    Error = np.linalg.norm(F_exact - F)
+    print(Error)
+
     # Compare initial condition to the final state
     xm, vm = np.meshgrid(x, v)
 
-    plt.subplot(1,3,1)
+    plt.subplot(2,3,1)
+    plt.title("IC (t=0)")
     plt.scatter(xm, vm)
-    cp = plt.pcolormesh(xm, vm, f_0, cmap='viridis')
+    cp = plt.pcolormesh(xm, vm, f_0/np.max(f_0), cmap='viridis', vmin=0, vmax=1)
     plt.colorbar(cp)
-    plt.subplot(1,3,2)
+    plt.subplot(2,3,2)
+    plt.title("Aprox (t=1)")
     plt.scatter(xm, vm)
-    cp = plt.pcolormesh(xm, vm, F, cmap='viridis')
+    cp = plt.pcolormesh(xm, vm, F/np.max(f_0), cmap='viridis', vmin=0, vmax=1)
     plt.colorbar(cp)
-    plt.subplot(1, 3, 3)
+    plt.subplot(2, 3, 3)
+    plt.title("Exact (t=1)")
     plt.scatter(xm, vm)
-    cp = plt.pcolormesh(xm, vm, F_exact, cmap='viridis')
+    cp = plt.pcolormesh(xm, vm, F_exact/np.max(f_0), cmap='viridis', vmin=0, vmax=1)
+    plt.colorbar(cp)
+    plt.subplot(2, 3, 5)
+    plt.title("Error (t=1) (order 1e-1)")
+    plt.scatter(xm, vm)
+    cp = plt.pcolormesh(xm, vm, np.abs(F_exact-F.T)/np.max(f_0), cmap='viridis', vmin=0, vmax=0.1)
     plt.colorbar(cp)
     plt.show()
 
     # print(ranks)
-
-    # error analysis
-    Error = np.linalg.norm(F_exact - F)
-    print(Error)
 
 if __name__ == '__main__':
     main()
