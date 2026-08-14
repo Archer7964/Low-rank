@@ -43,8 +43,8 @@ def main():
 
         # S-Step
         def DtS(S): # rxr
-            proj_UU = U_curr.T @ U_curr # rxr
-            proj_aU = U_curr.T @ a[:, None] # rx1
+            proj_UU = U_next.T @ U_next # rxr
+            proj_aU = U_next.T @ a[:, None] # rx1
             proj_VV = Vh_curr @ Vh_curr.T # rxr
             proj_bV = b[None, :] @ Vh_curr.T # 1xr
             return -proj_UU @ S @ proj_VV.T + proj_aU @ proj_bV
@@ -52,8 +52,8 @@ def main():
 
         # L-Step
         def DtL(L): # rxv
-            proj_UU = U_curr.T @ U_curr  # rxr
-            proj_aU = U_curr.T @ a[:, None]  # rx1
+            proj_UU = U_next.T @ U_next  # rxr
+            proj_aU = U_next.T @ a[:, None]  # rx1
             return -proj_UU @ L + proj_aU @ b[None, :]
         L_next = rk4(DtL, S_star_star @ Vh_curr, dT)
         Vh_next, S_next = np.linalg.qr(L_next.T)
