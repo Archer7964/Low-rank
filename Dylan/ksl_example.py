@@ -24,14 +24,10 @@ def main():
 
     # Truncate initial condition down to the given rank #
     U0, singular_values, Vh0 = np.linalg.svd(f_0, full_matrices=False)
-    rank = select_rank(singular_values, MAX_RANK, RANK_TOL)
-    U0_low = U0[:, :rank]
-    S0_low = np.diag(singular_values[:rank])
-    Vh0_low = Vh0[:rank, :]
+    S0 = np.diag(singular_values)
 
-    ranks = [rank]
-
-    U_curr, S_curr, Vh_curr = U0_low, S0_low, Vh0_low
+    U_curr, S_curr, Vh_curr = U0, S0, Vh0
+    ranks = []
     for T in range(nt):
         # K-Step
         def DtK(K): # xxr
@@ -93,9 +89,9 @@ def main():
     cp = plt.pcolormesh(xm, vm, F_exact/np.max(f_0), cmap='viridis', vmin=0, vmax=1)
     plt.colorbar(cp)
     plt.subplot(2, 3, 5)
-    plt.title("Error (t=1) (order 1e-1)")
+    plt.title("Error (t=1) (order 1e-2)")
     plt.scatter(xm, vm)
-    cp = plt.pcolormesh(xm, vm, np.abs(F_exact-F.T)/np.max(f_0), cmap='viridis', vmin=0, vmax=0.1)
+    cp = plt.pcolormesh(xm, vm, np.abs(F_exact-F.T)/np.max(f_0), cmap='viridis', vmin=0, vmax=0.01)
     plt.colorbar(cp)
     plt.show()
 

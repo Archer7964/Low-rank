@@ -30,8 +30,8 @@ def main():
     f_0_v = v*v * np.exp(-v * v / 2) / np.sqrt(2 * np.pi)
     perturb = np.diag(1 + 0.02*np.sin(0.5*x))
     f_0 = perturb @ f_0_x[:, None] * f_0_v[None, :]
-    T_span = [0,40]
-    dT = 0.005
+    T_span = [0,10]
+    dT = 0.01
     nt = int((T_span[1] - T_span[0]) // dT)
 
     D_x = central_Dif(nx, dx, True)
@@ -39,15 +39,22 @@ def main():
 
     # Truncate initial condition down to the given rank #
     U0, singular_values, Vh0 = np.linalg.svd(f_0, full_matrices=False)
-    rank = select_rank(singular_values, MAX_RANK, RANK_TOL)
-    U0_low = U0[:, :rank]
-    S0_low = np.diag(singular_values[:rank])
-    Vh0_low = Vh0[:rank, :]
+    S0 = np.diag(singular_values)
 
-    ranks = [rank]
+    # Store specific states (t=0, t=5, t=7, t=9)
+    F_5, F_7, F_9 = [[]],[[]],[[]]
 
-    U_curr, S_curr, Vh_curr = U0_low, S0_low, Vh0_low
+    U_curr, S_curr, Vh_curr = U0, S0, Vh0
+    ranks = []
     for T in range(nt):
+        # Store specific states (t=0, t=5, t=7, t=9)
+        if int(T*dT) == 5:
+            F_5 = U_curr @ S_curr @ Vh_curr
+        elif int(T*dT) == 7:
+            F_7 = U_curr @ S_curr @ Vh_curr
+        elif int(T*dT) == 9:
+            F_9 = U_curr @ S_curr @ Vh_curr
+
         # K-Step
         def DtK(Kk):
             E = Electric_Field(Kk @ Vh_curr, x, v)
@@ -77,17 +84,32 @@ def main():
     # Construct the final state of the system #
     F = U_curr @ S_curr @ Vh_curr
 
-    # Compare initial condition to the final state
+    # Compare every stored state
     xm, vm = np.meshgrid(x, v)
 
-    plt.subplot(1,2,1)
+    plt.subplot(1,4,1)
     plt.scatter(xm, vm)
     cp = plt.pcolormesh(xm, vm, f_0, cmap='viridis')
     plt.colorbar(cp)
-    plt.subplot(1,2,2)
+    plt.title("t=0")
+    plt.subplot(1,4,2)
     plt.scatter(xm, vm)
-    cp = plt.pcolormesh(xm, vm, F, cmap='viridis')
+    cp = plt.pcolormesh(xm, vm, F_5, cmap='viridis')
     plt.colorbar(cp)
+    plt.axis("off")
+    plt.title("t=5")
+    plt.subplot(1, 4, 3)
+    plt.scatter(xm, vm)
+    cp = plt.pcolormesh(xm, vm, F_7, cmap='viridis')
+    plt.colorbar(cp)
+    plt.axis("off")
+    plt.title("t=7")
+    plt.subplot(1, 4, 4)
+    plt.scatter(xm, vm)
+    cp = plt.pcolormesh(xm, vm, F_9, cmap='viridis')
+    plt.colorbar(cp)
+    plt.axis("off")
+    plt.title("t=9")
     plt.show()
 
     print(ranks)
