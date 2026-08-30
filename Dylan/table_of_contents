@@ -1,0 +1,9 @@
+1) ksl_example.py holds the project-splitting algorithm used on the example f_t = a(x)b(x) - f
+2) ksl_vp_eq.py holds the project-splitting algorithm used on the 1D Vlasov-Poisson equation
+3) utility files
+  (a) diff_mat.py holds finite difference methods
+  (b) helpers.py holds a simple rk4 method compatible with numpy matrices and Archer's rank-selection method
+  (c) equations.py holds the equations for steps K, S, and L from the OG paper used for the VP example
+4) images
+  (a) ksl_exp_figure1.png belongs to ksl_example.py
+  (b) ksl_vpeq_figure1.png and ksl_vpeq_figure2.png belong to ksl_vp_eq.py
