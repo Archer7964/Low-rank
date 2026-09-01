@@ -36,7 +36,7 @@ def K_del_t(K_tx, Vh_tv, vel, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg):
     proj_VdV = Vh_tv @ Vh_del_v_neg.T
     neg_neg_sol = -K_del_x_neg @ proj_VvV.T + np.diag(E_neg) @ K_tx @ proj_VdV.T
 
-    return (pos_pos_sol + pos_neg_sol + neg_pos_sol + neg_neg_sol)/4
+    return pos_pos_sol + pos_neg_sol + neg_pos_sol + neg_neg_sol
 
 def S_del_t(U_tx, S_t, Vh_tv, vel, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg):
     # positive/negative vel and E effects the difference mode
@@ -78,7 +78,7 @@ def S_del_t(U_tx, S_t, Vh_tv, vel, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg):
     proj_VdV = Vh_tv @ Vh_del_v_neg.T
     neg_neg_sol = -proj_UdU @ S_t @ proj_VvV.T + proj_UEU @ S_t @ proj_VdV.T
 
-    return (pos_pos_sol + pos_neg_sol + neg_pos_sol + neg_neg_sol)/4
+    return pos_pos_sol + pos_neg_sol + neg_pos_sol + neg_neg_sol
 
 def L_del_t(U_tx, L_tv, vel, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg):
     # positive/negative vel and E effects the difference mode
@@ -112,7 +112,7 @@ def L_del_t(U_tx, L_tv, vel, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg):
     proj_UEU = U_tx.T @ np.diag(E_neg) @ U_tx
     neg_neg_sol = -proj_UdU @ L_tv * v_neg + proj_UEU @ L_del_v_neg
 
-    return (pos_pos_sol + pos_neg_sol + neg_pos_sol + neg_neg_sol)/4
+    return pos_pos_sol + pos_neg_sol + neg_pos_sol + neg_neg_sol
 
 
 from scipy.integrate import simpson

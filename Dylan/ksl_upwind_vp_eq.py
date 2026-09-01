@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from diff_mat import *
 
 # ODEs, Electric Field, and Local RK4 Method #
-from equations import *
+from upwind_equations import *
 
 # Rank Selection (Archer) #
 from helpers import *
@@ -58,20 +58,23 @@ def main():
         # K-Step
         def DtK(Kk):
             E = Electric_Field(Kk @ Vh_curr, x, v)
-            return K_del_t(Kk, Vh_curr, v, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg)
+            # articficial scaling of /4
+            return K_del_t(Kk, Vh_curr, v, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg)/4
         K_next = rk4(DtK, U_curr @ S_curr, dT)
         U_next, S_star = np.linalg.qr(K_next)
 
         # S-Step
         def DtS(Sk):
             E = Electric_Field(U_next @ Sk @ Vh_curr, x, v)
-            return S_del_t(U_next, Sk, Vh_curr, v, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg)
+            # articficial scaling of /4
+            return S_del_t(U_next, Sk, Vh_curr, v, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg)/4
         S_star_star = rk4(DtS, S_star, -dT)
 
         # L-Step
         def DtL(Lk):
             E = Electric_Field(U_next @ Lk, x, v)
-            return L_del_t(U_next, Lk, v, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg)
+            # articficial scaling of /4
+            return L_del_t(U_next, Lk, v, E, D_x_pos, D_x_neg, D_v_pos, D_v_neg)/4
         L_next = rk4(DtL, S_star_star @ Vh_curr, dT)
         Vh_next, S_next = np.linalg.qr(L_next.T)
 
