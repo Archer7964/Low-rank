@@ -9,4 +9,4 @@
 5) images
   (a) ksl_exp_figure1.png belongs to ksl_example.py
   (b) ksl_vpeq_figure1.png and ksl_vpeq_figure2.png belong to ksl_vp_eq.py
-  (c) ksl_vpeq_figure3.png belong to ksl_upwind_vp_eq.py
+  (c) ksl_upwind_vpeq_figure1.png belong to ksl_upwind_vp_eq.py
