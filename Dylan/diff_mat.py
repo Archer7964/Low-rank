@@ -50,7 +50,7 @@ def upwind_Dif(size, dy, positive=True, periodic=False):
     """
     dy_inv = 1 / (2*dy)
     D = np.zeros((size, size))
-    if positive:
+    if not positive:
         for i in range(size-2):
             D[i, i:i+3] = [-3, 4, -1]
         D[-2, -2:size] = [-3, 4]
