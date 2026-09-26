@@ -1,0 +1,4 @@
+
+--- 2026-09-24T23:56:06 | rank=104, k=10, grid=128x128, T=20, dt=0.005, method=L-BFGS-B, max_steps=200, tol=1e-15, gtol=1e-15, ftol=1e-14, maxcor=10, maxls=30 ---
+[rank=104] Initial: J_model=4.3146888331e-03
+rank=104 | steps= 0 | J_model=nan | J_ref=nan | Forward failed: Non-finite forward objective.

@@ -1,0 +1,66 @@
+
+--- 2026-09-24T23:30:27 | rank=35, k=10, grid=128x128, T=20, dt=0.005, method=L-BFGS-B, max_steps=200, tol=1e-15, gtol=1e-15, ftol=1e-14, maxcor=10, maxls=30 ---
+[rank=35] Initial: J_model=4.3103701287e-03
+[rank=35] Iter 1: J_model=6.2038342593e-05, |g|_inf=1.029026e-01, |delta_a|=5.710493e-03
+[rank=35] Iter 2: J_model=2.3660917844e-05, |g|_inf=6.285522e-02, |delta_a|=3.814826e-04
+[rank=35] Iter 3: J_model=5.4838567747e-06, |g|_inf=1.303608e-02, |delta_a|=5.501890e-04
+[rank=35] Iter 4: J_model=5.1133379382e-06, |g|_inf=1.060266e-02, |delta_a|=8.572903e-05
+[rank=35] Iter 5: J_model=4.9451453251e-06, |g|_inf=1.249509e-03, |delta_a|=3.173438e-05
+[rank=35] Iter 6: J_model=4.9372139924e-06, |g|_inf=1.388601e-03, |delta_a|=5.695226e-06
+[rank=35] Iter 7: J_model=4.9362188633e-06, |g|_inf=1.346948e-03, |delta_a|=1.710589e-05
+[rank=35] Iter 8: J_model=4.9265713271e-06, |g|_inf=1.264152e-03, |delta_a|=6.865186e-06
+[rank=35] Iter 9: J_model=4.9158828632e-06, |g|_inf=1.234641e-03, |delta_a|=1.145538e-05
+[rank=35] Iter 10: J_model=4.9030744393e-06, |g|_inf=2.437193e-03, |delta_a|=1.722394e-05
+[rank=35] Iter 11: J_model=4.8795566165e-06, |g|_inf=5.871306e-03, |delta_a|=7.345514e-05
+[rank=35] Iter 12: J_model=4.8628641770e-06, |g|_inf=5.070831e-03, |delta_a|=1.225654e-05
+[rank=35] Iter 13: J_model=4.8284982558e-06, |g|_inf=6.405633e-03, |delta_a|=6.584163e-05
+[rank=35] Iter 14: J_model=4.8090881556e-06, |g|_inf=4.245890e-03, |delta_a|=2.591453e-05
+[rank=35] Iter 15: J_model=4.7749819074e-06, |g|_inf=3.243031e-03, |delta_a|=7.695008e-05
+[rank=35] Iter 16: J_model=4.7464422494e-06, |g|_inf=4.109843e-03, |delta_a|=8.158655e-05
+[rank=35] Iter 17: J_model=4.7013418540e-06, |g|_inf=3.147243e-03, |delta_a|=4.925272e-05
+[rank=35] Iter 18: J_model=4.6084302076e-06, |g|_inf=4.806171e-03, |delta_a|=3.667295e-04
+[rank=35] Iter 19: J_model=4.5587809432e-06, |g|_inf=7.333217e-03, |delta_a|=4.475253e-04
+[rank=35] Iter 20: J_model=4.4960331697e-06, |g|_inf=1.462659e-03, |delta_a|=1.799445e-04
+[rank=35] Iter 21: J_model=4.4848713278e-06, |g|_inf=1.266063e-03, |delta_a|=5.541923e-05
+[rank=35] Iter 22: J_model=4.4825749629e-06, |g|_inf=7.196119e-04, |delta_a|=8.046413e-06
+[rank=35] Iter 23: J_model=4.4782606882e-06, |g|_inf=6.559193e-04, |delta_a|=1.842602e-05
+[rank=35] Iter 24: J_model=4.4741521612e-06, |g|_inf=1.125928e-03, |delta_a|=4.614004e-05
+[rank=35] Iter 25: J_model=4.4654719263e-06, |g|_inf=2.558871e-03, |delta_a|=1.146202e-04
+[rank=35] Iter 26: J_model=4.4521893646e-06, |g|_inf=1.783489e-03, |delta_a|=2.093145e-05
+[rank=35] Iter 27: J_model=4.4436000254e-06, |g|_inf=3.114036e-03, |delta_a|=9.997166e-05
+[rank=35] Iter 28: J_model=4.3993286454e-06, |g|_inf=1.065413e-03, |delta_a|=1.110984e-04
+[rank=35] Iter 29: J_model=4.3661804418e-06, |g|_inf=4.290246e-03, |delta_a|=4.448002e-04
+[rank=35] Iter 30: J_model=4.3661277872e-06, |g|_inf=2.970513e-03, |delta_a|=5.842662e-07
+[rank=35] Iter 31: J_model=4.3494433274e-06, |g|_inf=2.273556e-03, |delta_a|=2.238622e-05
+[rank=35] Iter 32: J_model=4.3124694575e-06, |g|_inf=4.111319e-03, |delta_a|=1.118381e-04
+[rank=35] Iter 33: J_model=4.3106704025e-06, |g|_inf=3.029869e-03, |delta_a|=1.560212e-05
+[rank=35] Iter 34: J_model=4.3078289343e-06, |g|_inf=3.383578e-03, |delta_a|=2.410567e-05
+[rank=35] Iter 35: J_model=4.2977316163e-06, |g|_inf=3.579458e-03, |delta_a|=4.505311e-05
+[rank=35] Iter 36: J_model=4.2915998102e-06, |g|_inf=3.758974e-03, |delta_a|=1.832783e-05
+[rank=35] Iter 37: J_model=4.2717460110e-06, |g|_inf=2.536997e-03, |delta_a|=6.353001e-05
+[rank=35] Iter 38: J_model=4.2697308553e-06, |g|_inf=2.642074e-03, |delta_a|=5.967182e-06
+[rank=35] Iter 39: J_model=4.2644645383e-06, |g|_inf=1.938483e-03, |delta_a|=1.668275e-05
+[rank=35] Iter 40: J_model=4.2560238245e-06, |g|_inf=1.027138e-03, |delta_a|=9.019624e-06
+[rank=35] Iter 41: J_model=4.2544889174e-06, |g|_inf=1.262289e-03, |delta_a|=2.358764e-05
+[rank=35] Iter 42: J_model=4.2540485027e-06, |g|_inf=1.736591e-03, |delta_a|=6.894723e-06
+[rank=35] Iter 43: J_model=4.2526669403e-06, |g|_inf=8.126150e-04, |delta_a|=5.931638e-06
+[rank=35] Iter 44: J_model=4.2515292997e-06, |g|_inf=2.642059e-03, |delta_a|=2.610886e-06
+[rank=35] Iter 45: J_model=4.2510062288e-06, |g|_inf=6.024484e-03, |delta_a|=9.855542e-06
+[rank=35] Iter 46: J_model=4.2509035944e-06, |g|_inf=1.318858e-03, |delta_a|=2.820683e-07
+[rank=35] Iter 47: J_model=4.2484903514e-06, |g|_inf=1.293242e-03, |delta_a|=2.734318e-06
+[rank=35] Iter 48: J_model=4.2474940611e-06, |g|_inf=4.425458e-04, |delta_a|=3.284758e-06
+[rank=35] Iter 49: J_model=4.2474160376e-06, |g|_inf=1.124273e-03, |delta_a|=2.873348e-07
+[rank=35] Iter 50: J_model=4.2459179218e-06, |g|_inf=8.249646e-04, |delta_a|=7.037859e-06
+[rank=35] Iter 51: J_model=4.2454263242e-06, |g|_inf=2.160998e-03, |delta_a|=2.055894e-06
+[rank=35] Iter 52: J_model=4.2447850297e-06, |g|_inf=1.983647e-03, |delta_a|=3.634287e-05
+[rank=35] Iter 53: J_model=4.2447131977e-06, |g|_inf=4.004306e-03, |delta_a|=7.697500e-05
+[rank=35] Iter 54: J_model=4.2269081355e-06, |g|_inf=3.065035e-03, |delta_a|=7.677004e-06
+[rank=35] Iter 55: J_model=4.1959346052e-06, |g|_inf=1.730960e-03, |delta_a|=6.174570e-05
+[rank=35] Iter 56: J_model=4.1877708334e-06, |g|_inf=8.067391e-04, |delta_a|=1.745541e-05
+[rank=35] Iter 57: J_model=4.1775743212e-06, |g|_inf=7.224227e-03, |delta_a|=7.288522e-05
+[rank=35] Iter 58: J_model=4.1775264753e-06, |g|_inf=3.840340e-03, |delta_a|=2.659655e-08
+[rank=35] Iter 59: J_model=4.1767043159e-06, |g|_inf=1.034362e-02, |delta_a|=2.395517e-05
+[rank=35] Iter 60: J_model=4.1766757319e-06, |g|_inf=2.670568e-03, |delta_a|=3.901059e-08
+[rank=35] Iter 61: J_model=4.1762240155e-06, |g|_inf=3.890678e-02, |delta_a|=3.370553e-06
+[rank=35] Stop: ABNORMAL:  (steps=61)
+rank= 35 | steps=61 | J_model=4.1762240155e-06 | J_ref=4.2907283816e-06 | ABNORMAL: 

@@ -1,0 +1,5 @@
+
+--- 2026-09-24T23:46:13 | rank=67, k=10, grid=128x128, T=20, dt=0.005, method=L-BFGS-B, max_steps=200, tol=1e-15, gtol=1e-15, ftol=1e-14, maxcor=10, maxls=30 ---
+[rank=67] Initial: J_model=4.3145575737e-03
+[rank=67] Stop: ABNORMAL:  (steps=0)
+rank= 67 | steps= 0 | J_model=4.3145575737e-03 | J_ref=4.3146084145e-03 | ABNORMAL: 

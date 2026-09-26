@@ -1,0 +1,30 @@
+
+--- 2026-09-24T08:18:55 | rank=5, k=10, grid=128x128, T=20, dt=0.005, method=L-BFGS-B, max_steps=200, tol=1e-15, gtol=1e-15, ftol=1e-14, maxcor=10, maxls=30 ---
+[rank=5] Initial: J_model=4.3570112513e-03
+[rank=5] Iter 1: J_model=9.5362132240e-05, |g|_inf=1.494110e-01, |delta_a|=5.096560e-03
+[rank=5] Iter 2: J_model=4.0730742617e-05, |g|_inf=9.510296e-02, |delta_a|=4.379349e-04
+[rank=5] Iter 3: J_model=3.9862774722e-06, |g|_inf=8.547183e-03, |delta_a|=7.530508e-04
+[rank=5] Iter 4: J_model=3.8506139665e-06, |g|_inf=7.185714e-03, |delta_a|=6.683825e-05
+[rank=5] Iter 5: J_model=3.7198644561e-06, |g|_inf=8.047881e-04, |delta_a|=2.809487e-05
+[rank=5] Iter 6: J_model=3.7164720465e-06, |g|_inf=1.782095e-04, |delta_a|=6.255214e-06
+[rank=5] Iter 7: J_model=3.7162040298e-06, |g|_inf=1.481413e-04, |delta_a|=1.538557e-06
+[rank=5] Iter 8: J_model=3.7158282381e-06, |g|_inf=2.401629e-04, |delta_a|=2.345185e-06
+[rank=5] Iter 9: J_model=3.7139208332e-06, |g|_inf=4.246371e-04, |delta_a|=1.516080e-05
+[rank=5] Iter 10: J_model=3.7119010537e-06, |g|_inf=4.110159e-04, |delta_a|=2.094790e-05
+[rank=5] Iter 11: J_model=3.7116609278e-06, |g|_inf=1.172347e-03, |delta_a|=2.687066e-05
+[rank=5] Iter 12: J_model=3.7097224906e-06, |g|_inf=2.137101e-04, |delta_a|=1.164300e-05
+[rank=5] Iter 13: J_model=3.7095679283e-06, |g|_inf=4.378423e-05, |delta_a|=1.490949e-06
+[rank=5] Iter 14: J_model=3.7095240652e-06, |g|_inf=2.506787e-05, |delta_a|=4.872272e-06
+[rank=5] Iter 15: J_model=3.7095169192e-06, |g|_inf=1.399528e-05, |delta_a|=1.405088e-06
+[rank=5] Iter 16: J_model=3.7095106277e-06, |g|_inf=1.360632e-05, |delta_a|=1.225426e-06
+[rank=5] Iter 17: J_model=3.7094994595e-06, |g|_inf=2.897184e-05, |delta_a|=1.948003e-06
+[rank=5] Iter 18: J_model=3.7094820378e-06, |g|_inf=3.970479e-05, |delta_a|=2.241387e-06
+[rank=5] Iter 19: J_model=3.7094455914e-06, |g|_inf=7.413583e-05, |delta_a|=5.594099e-06
+[rank=5] Iter 20: J_model=3.7094151748e-06, |g|_inf=3.063847e-05, |delta_a|=3.617221e-06
+[rank=5] Iter 21: J_model=3.7094019244e-06, |g|_inf=1.355313e-05, |delta_a|=3.206209e-06
+[rank=5] Iter 22: J_model=3.7094010040e-06, |g|_inf=1.402807e-05, |delta_a|=1.082126e-06
+[rank=5] Iter 23: J_model=3.7094003235e-06, |g|_inf=5.648281e-06, |delta_a|=1.949121e-07
+[rank=5] Iter 24: J_model=3.7094002715e-06, |g|_inf=1.016157e-06, |delta_a|=5.360904e-08
+[rank=5] Iter 25: J_model=3.7094002676e-06, |g|_inf=5.641569e-07, |delta_a|=2.190739e-08
+[rank=5] Stop: CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH (steps=25)
+rank=  5 | steps=25 | J_model=3.7094002676e-06 | J_ref=4.2007103911e-06 | CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH

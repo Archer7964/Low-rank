@@ -1,0 +1,14 @@
+
+--- 2026-09-24T23:37:22 | rank=46, k=10, grid=128x128, T=20, dt=0.005, method=L-BFGS-B, max_steps=200, tol=1e-15, gtol=1e-15, ftol=1e-14, maxcor=10, maxls=30 ---
+[rank=46] Initial: J_model=4.3141915581e-03
+[rank=46] Iter 1: J_model=5.2362544192e-05, |g|_inf=9.870418e-02, |delta_a|=5.117651e-03
+[rank=46] Iter 2: J_model=2.1883649779e-05, |g|_inf=6.064267e-02, |delta_a|=3.382795e-04
+[rank=46] Iter 3: J_model=6.1933332034e-06, |g|_inf=3.470401e-02, |delta_a|=5.739149e-04
+[rank=46] Iter 4: J_model=5.0694429281e-06, |g|_inf=2.292726e-02, |delta_a|=1.674088e-04
+[rank=46] Iter 5: J_model=4.2838115486e-06, |g|_inf=2.170625e-03, |delta_a|=6.827508e-05
+[rank=46] Iter 6: J_model=4.2836549646e-06, |g|_inf=1.296385e-03, |delta_a|=2.733989e-07
+[rank=46] Iter 7: J_model=4.2835096962e-06, |g|_inf=2.910286e-04, |delta_a|=1.378808e-07
+[rank=46] Iter 8: J_model=4.2834936633e-06, |g|_inf=4.437803e-04, |delta_a|=2.467341e-08
+[rank=46] Iter 9: J_model=4.2834936633e-06, |g|_inf=4.437803e-04, |delta_a|=3.698199e-21
+[rank=46] Stop: CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH (steps=9)
+rank= 46 | steps= 9 | J_model=4.2834936633e-06 | J_ref=4.3096742645e-06 | CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH

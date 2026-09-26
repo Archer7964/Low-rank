@@ -1,0 +1,6 @@
+
+--- 2026-09-24T23:46:15 | rank=68, k=10, grid=128x128, T=20, dt=0.005, method=L-BFGS-B, max_steps=200, tol=1e-15, gtol=1e-15, ftol=1e-14, maxcor=10, maxls=30 ---
+[rank=68] Initial: J_model=4.3145631589e-03
+[rank=68] Iter 1: J_model=4.3145631589e-03, |g|_inf=4.160369e+103, |delta_a|=0.000000e+00
+[rank=68] Stop: CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH (steps=1)
+rank= 68 | steps= 1 | J_model=4.3145631589e-03 | J_ref=4.3146084145e-03 | CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH

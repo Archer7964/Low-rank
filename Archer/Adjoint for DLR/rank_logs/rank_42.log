@@ -1,0 +1,25 @@
+
+--- 2026-09-24T23:35:18 | rank=42, k=10, grid=128x128, T=20, dt=0.005, method=L-BFGS-B, max_steps=200, tol=1e-15, gtol=1e-15, ftol=1e-14, maxcor=10, maxls=30 ---
+[rank=42] Initial: J_model=4.3135386926e-03
+[rank=42] Iter 1: J_model=5.2113501043e-05, |g|_inf=9.988299e-02, |delta_a|=5.051847e-03
+[rank=42] Iter 2: J_model=2.2021840703e-05, |g|_inf=6.223378e-02, |delta_a|=3.376634e-04
+[rank=42] Iter 3: J_model=4.7425137164e-06, |g|_inf=1.896882e-02, |delta_a|=5.404915e-04
+[rank=42] Iter 4: J_model=4.2484409990e-06, |g|_inf=2.515616e-03, |delta_a|=5.276992e-05
+[rank=42] Iter 5: J_model=4.2006921767e-06, |g|_inf=1.197586e-03, |delta_a|=2.423291e-05
+[rank=42] Iter 6: J_model=4.1943126928e-06, |g|_inf=3.738518e-04, |delta_a|=6.109755e-06
+[rank=42] Iter 7: J_model=4.1937823633e-06, |g|_inf=2.696579e-04, |delta_a|=1.291735e-06
+[rank=42] Iter 8: J_model=4.1934273822e-06, |g|_inf=1.259000e-03, |delta_a|=1.302027e-06
+[rank=42] Iter 9: J_model=4.1907280077e-06, |g|_inf=9.964296e-04, |delta_a|=1.001343e-05
+[rank=42] Iter 10: J_model=4.1889304621e-06, |g|_inf=5.375527e-04, |delta_a|=8.330615e-06
+[rank=42] Iter 11: J_model=4.1863349382e-06, |g|_inf=2.530454e-03, |delta_a|=1.725124e-05
+[rank=42] Iter 12: J_model=4.1862347357e-06, |g|_inf=2.029239e-03, |delta_a|=1.939154e-06
+[rank=42] Iter 13: J_model=4.1851804528e-06, |g|_inf=7.763911e-04, |delta_a|=6.616309e-06
+[rank=42] Iter 14: J_model=4.1847491885e-06, |g|_inf=4.928631e-04, |delta_a|=1.163578e-06
+[rank=42] Iter 15: J_model=4.1839061789e-06, |g|_inf=2.121223e-03, |delta_a|=1.851196e-06
+[rank=42] Iter 16: J_model=4.1834854111e-06, |g|_inf=3.986750e-03, |delta_a|=3.266448e-07
+[rank=42] Iter 17: J_model=4.1833413446e-06, |g|_inf=2.001320e-02, |delta_a|=1.583097e-07
+[rank=42] Iter 18: J_model=4.1832945028e-06, |g|_inf=2.838853e-02, |delta_a|=1.878346e-08
+[rank=42] Iter 19: J_model=4.1831500847e-06, |g|_inf=6.807537e-02, |delta_a|=7.134215e-08
+[rank=42] Iter 20: J_model=4.1831167932e-06, |g|_inf=2.498399e-03, |delta_a|=1.980047e-17
+[rank=42] Stop: ABNORMAL:  (steps=20)
+rank= 42 | steps=20 | J_model=4.1831167932e-06 | J_ref=4.2484828160e-06 | ABNORMAL: 

@@ -1,0 +1,5 @@
+
+--- 2026-09-24T23:43:34 | rank=58, k=10, grid=128x128, T=20, dt=0.005, method=L-BFGS-B, max_steps=200, tol=1e-15, gtol=1e-15, ftol=1e-14, maxcor=10, maxls=30 ---
+[rank=58] Initial: J_model=4.3144176485e-03
+[rank=58] Iter 1: J_model=4.3143994130e-03, |g|_inf=5.603176e+03, |delta_a|=3.421180e-09
+rank= 58 | steps= 0 | J_model=nan | J_ref=nan | Forward failed: overflow encountered in multiply
